@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "YtuAndroidSamples",
+    "module": "aspectj-plugin",
+    "version": "unspecified",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.0.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "aspectj-0.0.1.jar",
+          "url": "aspectj-0.0.1.jar",
+          "size": 8471,
+          "sha512": "d64ee698a3fcde22b8a218ae584872cc7ed74eb2415bfbaf5fb19a701e749de28cf1c923d3193ea6a44d797bd5fc4fa14debe055d8b0a882b6f97603079c65d0",
+          "sha256": "60285427f8513655399893449819526a1a5cf21353c4f6b0f82723b8f934114a",
+          "sha1": "7d986a5c345634de8798d8ed40141fe695a972b5",
+          "md5": "bdeb1defb8598e288ae6ff98dda8e66e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "4.1.0"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjrt",
+          "version": {
+            "requires": "1.9.1"
+          }
+        },
+        {
+          "group": "org.aspectj",
+          "module": "aspectjtools",
+          "version": {
+            "requires": "1.9.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "aspectj-0.0.1.jar",
+          "url": "aspectj-0.0.1.jar",
+          "size": 8471,
+          "sha512": "d64ee698a3fcde22b8a218ae584872cc7ed74eb2415bfbaf5fb19a701e749de28cf1c923d3193ea6a44d797bd5fc4fa14debe055d8b0a882b6f97603079c65d0",
+          "sha256": "60285427f8513655399893449819526a1a5cf21353c4f6b0f82723b8f934114a",
+          "sha1": "7d986a5c345634de8798d8ed40141fe695a972b5",
+          "md5": "bdeb1defb8598e288ae6ff98dda8e66e"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+plugins {
+    // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
+    id 'java-gradle-plugin'
+
+    // Apply the Groovy plugin to add support for Groovy
+    id 'groovy'
+
+    // 应用 Maven Publish Plugin 发布插件
+    id 'maven-publish'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    def classifier = getArchiveClassifier()
+    classifier.set('sources')
+    classifier.convention('sources')
+    from sourceSets.main.allSource
+}
+
+gradlePlugin {
+    plugins {
+        apkRename {
+            id = 'com.air.aspectjplugin'
+            implementationClass = 'com.air.aspectjplugin.AspectjPlugin'
+        }
+    }
+}
+
+publishing {
+    publications {
+        apkRename(MavenPublication) {
+            from components.java
+            groupId = 'com.air.aspectjplugin'
+            artifactId = 'aspectj'
+            version = '0.0.1'
+            artifact sourcesJar
+        }
+    }
+
+    repositories {
+        maven {
+            // $rootProject 表示你项目的根目录
+            url = "$rootDir/repo"
+        }
+    }
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:4.1.0'
+    implementation 'org.aspectj:aspectjrt:1.9.1'
+    implementation 'org.aspectj:aspectjtools:1.9.1'
+}

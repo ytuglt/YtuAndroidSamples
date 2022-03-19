@@ -1,0 +1,4 @@
+rootProject.name = "YtuAndroidSamples"
+include ':app'
+include ':aspectj-plugin'
+include ':aspectj'
